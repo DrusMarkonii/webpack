@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, "src"),
   mode: "development",
   entry: {
     main: "./index.js",
@@ -13,31 +13,39 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
   },
+  resolve: {
+    extensions: [".js", ".json", ".png", ".jsx", ".ts", ".tsx"],
+    alias: {
+      '@':path.resolve(__dirname, 'src'),
+      '@model':path.resolve(__dirname, 'src/model'),
+      '@css':path.resolve(__dirname, 'src/css')
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
-        template: './index.html'
-      }),
-  
+      template: "./index.html",
+    }),
+
     new CleanWebpackPlugin(),
   ],
   module: {
-    rules:[
+    rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(png|jpeg|gif|svg|jpg|webp)$/,
-        use: ['file-loader']
+        use: ["file-loader"],
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
-        use: ['file-loader']
+        use: ["file-loader"],
       },
       {
         test: /\.xml$/,
-        use: ['xml-loader']
-      }
-    ]
-  }
+        use: ["xml-loader"],
+      },
+    ],
+  },
 };
