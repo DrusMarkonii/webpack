@@ -8,7 +8,7 @@ import xml from "./data.xml";
 import csv from "./data.csv";
 const post = new Post("Webpack Post title", webpackLogo);
 
-$('pre').html(post.toString())
+$('pre').addClass('code').html(post.toString())
 console.log("JSON", json);
 console.log("XML", xml);
 console.log("CSV", csv);
