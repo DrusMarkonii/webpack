@@ -91,6 +91,16 @@ module.exports = {
         ],
       },
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+      {
         test: /\.s[ac]ss$/,
         use: [
           {
@@ -100,7 +110,7 @@ module.exports = {
             },
           },
           "css-loader",
-          "sass-loader"
+          "sass-loader",
         ],
       },
       {
@@ -113,7 +123,7 @@ module.exports = {
             },
           },
           "css-loader",
-          "less-loader"
+          "less-loader",
         ],
       },
       {
