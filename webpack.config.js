@@ -35,6 +35,8 @@ console.log("is prod", isProd);
 
 // const filename = (ext) => isDev ? `[name].$(ext)`: `[name].[fullhash].$(ext)`;
 
+
+
 module.exports = {
   context: path.resolve(__dirname, "src"),
   mode: "development",
@@ -97,6 +99,19 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
+          },
+        },
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-typescript"
+            ],
           },
         },
       },

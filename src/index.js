@@ -22,3 +22,8 @@ async function start() {
 }
 
 start().then((res) => console.log(res));
+
+class util{
+    static id = Date.now()
+}
+console.log('Util ID:', util.id )
