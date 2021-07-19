@@ -1,0 +1,12 @@
+$gap: 20px;
+$border: 2px solid rgb(128, 98, 0);
+.scss {
+  margin-top: $gap * 2;
+  padding: $gap;
+  border-top: $border;
+
+  h2 {
+    color: indigo;
+    text-align: center;
+  }
+}
