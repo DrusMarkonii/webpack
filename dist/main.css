@@ -440,5 +440,6 @@ h1 {
   border-top: 2px solid #806200; }
   .scss h2 {
     color: indigo;
-    text-align: center; }
+    text-align: center;
+    text-transform: uppercase; }
 
